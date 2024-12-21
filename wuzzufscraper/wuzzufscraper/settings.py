@@ -64,6 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "wuzzufscraper.pipelines.WuzzufscraperPipeline": 300,
+    "wuzzufscraper.pipelines.Savetomysqlpipeline": 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
