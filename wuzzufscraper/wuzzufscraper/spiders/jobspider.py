@@ -1,6 +1,6 @@
 import scrapy
 import urllib.parse
-
+from wuzzufscraper.items import WuzzufscraperItem
 
 class JobspiderSpider(scrapy.Spider):
     name = "jobspider"
@@ -9,6 +9,9 @@ class JobspiderSpider(scrapy.Spider):
 
 
     def parse(self, response):
+
+        job_item = WuzzufscraperItem()
+
         def fix(x):
             current_location = []
             for i in range(len(x)):
@@ -32,14 +35,16 @@ class JobspiderSpider(scrapy.Spider):
             if location_list == [] :
                 break
 
-            yield{
-                'name' : job.css('h2.css-m604qf a::text').get(),
-                'company_name' : job.css('a.css-17s97q8::text').get(),
-                'type' : job.css('a.css-n2jc4m  span::text').get(),
-                'location' : fix(location_list),
-                'mode' : job.css('span.css-o1vzmt::text').get(),
-                'url' : job.css('h2.css-m604qf a::attr(href)').get() 
-            }
+            
+            job_item['name'] = job.css('h2.css-m604qf a::text').get(),
+            job_item['company_name'] = job.css('a.css-17s97q8::text').get(),
+            job_item['type'] = job.css('a.css-n2jc4m  span::text').get(),
+            job_item['location'] = fix(location_list),
+            job_item['mode'] = job.css('span.css-o1vzmt::text').get(),
+            job_item['url'] = job.css('h2.css-m604qf a::attr(href)').get() 
+            
+
+            yield WuzzufscraperItem
 
             next_page = response.css('a.css-1fcv3il ::attr(href)').get()
 
