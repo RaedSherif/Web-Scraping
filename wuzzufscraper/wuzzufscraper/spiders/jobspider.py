@@ -44,7 +44,7 @@ class JobspiderSpider(scrapy.Spider):
             job_item['url'] = job.css('h2.css-m604qf a::attr(href)').get() 
             
 
-            yield WuzzufscraperItem
+            yield job_item
 
             next_page = response.css('a.css-1fcv3il ::attr(href)').get()
 
@@ -53,6 +53,8 @@ class JobspiderSpider(scrapy.Spider):
                 yield response.follow(next_page_url, callback = self.parse)
 
         self.log(f"Scraping page: {response.url}")
+
+        
 
         # Extract the current 'start' parameter
         url = response.url
