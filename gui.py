@@ -40,9 +40,10 @@ def display_jobs():
         link_label.bind("<Button-1>", open_url)
 
     root = tk.Tk()
-    root.title("Scraped Jobs Viewer")
+    root.title("Wuzzuf Scraper")
     root.configure(bg="#1e3d59")
     root.geometry("800x600")
+    root.iconbitmap('wuzzuf-logo.png')
 
     canvas = tk.Canvas(root, bg="#1e3d59", highlightthickness=0)
     scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)

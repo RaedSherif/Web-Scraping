@@ -14,20 +14,20 @@ class JobspiderSpider(scrapy.Spider):
             for i in range(len(x)):
                 loc =x[i]
                 loc = loc.strip()
-                current_location.append(loc)  
-                
+                current_location.append(loc)
+
                 if not loc.endswith(','):
                     locs = current_location
-                    return(' '.join(locs))        
+                    return(' '.join(locs))
 
         jobs = response.css('div.css-pkv5jc')
         if not jobs:
             self.log(f"No more jobs found. Stopping at {response.url}")
             return
 
-        
+
         for job in jobs:
-            
+
             location_list =job.css('span.css-5wys0k::text').getall()
             if location_list == [] :
                 break
@@ -46,7 +46,7 @@ class JobspiderSpider(scrapy.Spider):
             if jobs:
                 next_page_url = next_page
                 yield response.follow(next_page_url, callback = self.parse)
-           
+
         self.log(f"Scraping page: {response.url}")
 
         # Extract the current 'start' parameter
