@@ -99,7 +99,10 @@ FEED_EXPORT_FIELDS = [
     'location',
     'city',
     'governate',
-    'country',
+    'country',  
     'url'
 ]
 
+# FEEDS = {
+# 'jobs-data.json': {'format':'json', 'overwrite': True}
+# }
