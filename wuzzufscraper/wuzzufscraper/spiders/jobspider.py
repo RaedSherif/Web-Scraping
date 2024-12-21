@@ -9,9 +9,6 @@ class JobspiderSpider(scrapy.Spider):
 
 
     def parse(self, response):
-
-
-
         def fix(x):
             current_location = []
             for i in range(len(x)):
@@ -24,7 +21,6 @@ class JobspiderSpider(scrapy.Spider):
                     return(' '.join(locs))        
 
         jobs = response.css('div.css-pkv5jc')
-
         if not jobs:
             self.log(f"No more jobs found. Stopping at {response.url}")
             return
