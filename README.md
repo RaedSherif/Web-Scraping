@@ -1,6 +1,6 @@
 # Web Scraping Project
 
-This project is a Python-based web scraper built using **Scrapy** to extract raw job related data from **wuzzuf.com**. It focuses on extracting details like job titles, experience requirements, and other key data for analysis or display.
+This project is a Python-based web scraper built using **Scrapy** to extract raw job-related data from **wuzzuf.com**. It focuses on extracting details like job titles, experience requirements, and other key data for later further analysis or display.
 
 ---
 
@@ -33,6 +33,7 @@ pip install scrapy
 
 1. **Clone the Repository**:
 
+
 ```bash
 git clone https://github.com/yourusername/your-repo.git
 cd your-repo
@@ -41,15 +42,8 @@ cd your-repo
 2. **Run the Scraper**:
 
 ```bash
-scrapy crawl job_spider
+scrapy crawl job_spider -o jobs.csv
 ```
-
-3. **Export Data** (optional):
-
-```bash
-scrapy crawl job_spider -o output.json
-```
-
 ---
 
 ## Project Highlights
