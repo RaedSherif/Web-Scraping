@@ -35,7 +35,7 @@ def display_jobs():
 
         def open_url(event):
             import webbrowser
-            webbrowser.open(f"https://wuzzuf.net{job_url}")
+            webbrowser.open(job_url)
 
         link_label.bind("<Button-1>", open_url)
 
@@ -43,7 +43,7 @@ def display_jobs():
     root.title("Wuzzuf Scraper")
     root.configure(bg="#1e3d59")
     root.geometry("800x600")
-    root.iconbitmap('wuzzuf-logo.png')
+    root.iconbitmap("C:/Users/Anthony/Documents/GitHub\Web-Scraping/wuzzuf-logo.png")
 
     canvas = tk.Canvas(root, bg="#1e3d59", highlightthickness=0)
     scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
