@@ -52,6 +52,7 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     "wuzzufscraper.middlewares.WuzzufscraperDownloaderMiddleware": 543,
+    "scrapy_playwright.middleware.PlaywrightMiddleware": 800,
 }
 
 # Enable or disable extensions
@@ -103,6 +104,11 @@ FEED_EXPORT_FIELDS = [
     'country',  
     'url'
 ]
+
+PLAYWRIGHT_LAUNCH_OPTIONS = {
+    "headless": True,  # Set to False if you want to see browser interactions
+}
+
 
 # FEEDS = {
 # 'jobs-data.json': {'format':'json', 'overwrite': True}
