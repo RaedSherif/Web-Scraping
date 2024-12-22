@@ -142,4 +142,3 @@ class Savetomysqlpipeline:
     def close_spider(self,spider):
         self.cur.close()
         self.conn.close()
-
