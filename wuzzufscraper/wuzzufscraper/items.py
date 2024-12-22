@@ -7,6 +7,13 @@ import scrapy
 
 
 class WuzzufscraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+
+    name = scrapy.Field()
+    company_name = scrapy.Field()
+    type = scrapy.Field()
+    mode = scrapy.Field()
+    city = scrapy.Field()
+    governate = scrapy.Field()
+    country = scrapy.Field()
+    location = scrapy.Field()
+    url = scrapy.Field()

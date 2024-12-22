@@ -64,6 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "wuzzufscraper.pipelines.WuzzufscraperPipeline": 300,
+    "wuzzufscraper.pipelines.Savetomysqlpipeline": 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -90,3 +91,19 @@ ITEM_PIPELINES = {
 # Set settings whose default value is deprecated to a future-proof value
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+FEED_EXPORT_FIELDS = [
+    'name',
+    'company_name',
+    'type',
+    'mode',
+    'location',
+    'city',
+    'governate',
+    'country',  
+    'url'
+]
+
+# FEEDS = {
+# 'jobs-data.json': {'format':'json', 'overwrite': True}
+# }
