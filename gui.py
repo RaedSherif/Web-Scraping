@@ -4,7 +4,7 @@ import json
 
 def display_jobs():
     try:
-        with open("wuzzufscraper/wuzzufscraper/spiders/jobs.json", "r", encoding="utf-8") as file:
+        with open("wuzzufscraper/wuzzufscraper/spiders/raw-jobs.json", "r", encoding="utf-8") as file:
             jobs = json.load(file)
     except FileNotFoundError:
         jobs = []
