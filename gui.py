@@ -61,6 +61,5 @@ def display_jobs():
 
     root.mainloop()
 
-
 if __name__ == "__main__":
     display_jobs()
