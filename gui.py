@@ -85,7 +85,7 @@ def main():
     root.title("Wuzzuf Scraper")
     root.configure(bg="#1e3d59")
     root.geometry("800x600")
-    root.iconbitmap("C:/Users/Anthony/Documents/GitHub/Web-Scraping/wuzzuf-logo.png")
+    # root.iconbitmap("C:/Users/Anthony/Documents/GitHub/Web-Scraping/wuzzuf-logo.png")
 
     canvas = tk.Canvas(root, bg="#1e3d59", highlightthickness=0)
     scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
@@ -103,8 +103,15 @@ def main():
 
     display_jobs(results_frame, canvas)
 
+
+    def closefunction():
+
+        scrapy.crawler.Crawler.stop
+
+    close_button = tk.Button(root, text="Close Spider", command=lambda: threading.Thread(target=run_spider_and_update_gui, args=(results_frame, canvas)).stop(), 
+                           bg="#ff6b6b", fg="white", font=("Helvetica", 12, "bold"))
+        
     root.mainloop()
-
-
+    
 if __name__ == "__main__":
     main()

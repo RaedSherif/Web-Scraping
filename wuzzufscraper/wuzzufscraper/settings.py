@@ -52,7 +52,7 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     "wuzzufscraper.middlewares.WuzzufscraperDownloaderMiddleware": 543,
-    "scrapy_playwright.middleware.PlaywrightMiddleware": 800,
+    #"scrapy_playwright.middleware.PlaywrightMiddleware": 800,
 }
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "wuzzufscraper.pipelines.WuzzufscraperPipeline": 300,
-    "wuzzufscraper.pipelines.Savetomysqlpipeline": 400,
+   # "wuzzufscraper.pipelines.Savetomysqlpipeline": 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -105,9 +105,8 @@ FEED_EXPORT_FIELDS = [
     'url'
 ]
 
-PLAYWRIGHT_LAUNCH_OPTIONS = {
-    "headless": True,  # Set to False if you want to see browser interactions
-}
+# PLAYWRIGHT_LAUNCH_OPTIONS = {
+#    "headless": True,  # Set to False if you want to see browser interactions}
 
 
 # FEEDS = {
