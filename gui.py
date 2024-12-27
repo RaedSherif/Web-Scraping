@@ -104,13 +104,6 @@ def main():
     display_jobs(results_frame, canvas)
 
 
-    def closefunction():
-
-        scrapy.crawler.Crawler.stop
-
-    close_button = tk.Button(root, text="Close Spider", command=lambda: threading.Thread(target=run_spider_and_update_gui, args=(results_frame, canvas)).stop(), 
-                           bg="#ff6b6b", fg="white", font=("Helvetica", 12, "bold"))
-        
     root.mainloop()
     
 if __name__ == "__main__":
