@@ -1,0 +1,14 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "This project is a Python-based web scraper built using **Scrapy** to extract raw job-related data from **wuzzuf.com**. It focuses on extracting details like job titles, experience requirements, and other key data for later further analysis or display.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2"
+  }
+}
